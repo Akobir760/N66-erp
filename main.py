@@ -1,4 +1,4 @@
-from crud import auth, s_admin, admin
+from crud import auth, s_admin, admin, teacher
 
 
 
@@ -38,18 +38,27 @@ def teacher_menu():
     """)
     choice = input("Enter your choice:")
     if choice == 1:
-        pass
+        teacher.teacher1.my_groups()
     elif choice == 2:
-        pass
+        teacher.teacher1.show_group()
     elif choice == 3:
-        pass
+        teacher.teacher1.start_lesson()
     elif choice == 4:
-        pass
+        print("1. Create homework \n2. Delete homework")
+        h_choice = int(input("Enter your choice: "))
+        if h_choice == 1:
+            teacher.teacher1.create_homework()
+        elif h_choice == 2:
+            teacher.teacher1.delete_homework()
+        else:
+            print("Invalid choice!")
+        return teacher_menu()
     elif choice == 5:
-        pass
+        print("Exiting...")
+        return
     else:
         print("Invalid choice")
-        teacher_menu()
+    return teacher_menu()
 
 
 def students_menu():
