@@ -20,9 +20,9 @@ def Auth():
             return "admin"
 
     for data in students_data:
-        if data[2] == user_name and data[3] == password:
+        if data[1] == user_name and data[2] == password:
             return "student"
 
     for data in teachers_data:
-        if data[2] == user_name and data[3] == password:
+        if data[1] == user_name and data[2] == password:
             return "teacher"

@@ -34,7 +34,7 @@ class Teacher:
         started_at = datetime.now()
         for data in g_data:
             if int(data[0]) == group_id:
-                int(data[3]) += 2
+                data[3] = int(data[3]) + 2
         
         write(path=self.g_path, data=g_data)
 

@@ -54,16 +54,12 @@ class Admin:
 
 
     def add_balance(self):
+        payment_id = generate_id(path="data/payments.csv")
         s_id = int(input("Enter student's id: "))
         amount = int(input("Enter balance amount: "))
-        file_data = read(path=self.path)
-        for data in file_data:
-            if int(data[0]) == s_id:
-                int(data[4]) += amount
-                print("Payment is add!")
-                break
-        else:
-            print("Student can not find!")
+        payed_at = datetime.now()
+        payment_data = [payment_id,s_id,amount,payed_at]
+        append(path="data/payments.csv", data=payment_data)
 
 
     def upgrade_s(self):
@@ -105,7 +101,7 @@ class Admin:
                 data[1] == n_group_name 
                 data[2] == n_total_lessons 
                 data[3] ==n_ended_lessons 
-                data[4] == n_started_at
+                data[5] == n_started_at
                 print("Group is upgrade!")
 
     
