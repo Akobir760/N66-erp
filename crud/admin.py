@@ -59,7 +59,7 @@ class Admin:
         file_data = read(path=self.path)
         for data in file_data:
             if int(data[0]) == s_id:
-                int(data[4]) += amount
+                data[4] += amount
                 print("Payment is add!")
                 break
         else:
