@@ -32,7 +32,7 @@ class Admin:
     
     def s_to_group(self):
         student_id = int(input("Enter student's id: "))
-        group = input("Enter group name: ")
+        group = input("Enter group id: ")
         file_data = read(path=self.path)
         for data in file_data:
             if int(data[0]) == student_id:
@@ -87,7 +87,8 @@ class Admin:
         total_lessons = int(input("Enter total lessons: "))
         started_at = input("Enter starting time: ")
         ended_lessons = 0
-        group_data = [group_id,group_name,total_lessons,ended_lessons,started_at]
+        teacher_id = int(input("Enter teacher's id: "))
+        group_data = [group_id,group_name,total_lessons,ended_lessons,teacher_id,started_at]
         append(path=self.gpath, data=group_data)
         print(f"Group {group_name} is create!")
 
@@ -195,7 +196,7 @@ class Admin:
     
     def teacher_group(self):
         t_id = int(input("Enter teacher's id: "))
-        G_name = input("Enter group's name: ")
+        G_name = input("Enter group's id: ")
         file_data = read(path=self.tpath)
         for data in file_data:
             if int(data[0]) == t_id:
