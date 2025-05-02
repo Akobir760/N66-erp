@@ -1,4 +1,5 @@
 from crud import auth, s_admin, admin
+from student import Student
 
 
 
@@ -63,19 +64,27 @@ def students_menu():
     """)
     choice = input("Enter your choice:  ")
     if choice == "1":
-        pass
+        student = Student("data/groups.csv")
+        student.show_groups()
     elif choice == "2":
-        pass
+        student = Student("data/homework.csv")
+        student.upload_homework()
     elif choice == "3":
-        pass
+        student = Student("data/lesson.csv")
+        student.show_all_my_attendance()
     elif choice == "4":
-        pass
+        student = Student("data/balance.csv")
+        student.show_all_my_balance()
     elif choice == "5":
-        pass
+        student = Student("data/balance.csv")
+        student.payment()
     elif choice == "6":
-        pass
+        print("Logout")
+        Auth_menu()
     else:
         print("Invalid choice")
+    students_menu()
+
 
 
 def admin_menu():
